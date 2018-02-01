@@ -1,12 +1,18 @@
 # 计算一个阵列中各个元素的出现频率
 
 def count(arr)
-  h = {}
-
-  arr.each do |i|
-    # ...
+  h = Hash.new
+  c=0
+  arr.each do |i|    
+  #  h.merge!("#{i}":0)  
+    # h["#{i}"] = arr.count(i)
   end
+  arr.uniq{|x| h["#{x}"] = arr.count(x)}
 
+  # h[arr.uniq] = 0
+  
+    #puts Hash[arr.each_slice(2).to_a]
+  
   return h # 回传一个 hash
 end
 

@@ -7,10 +7,18 @@ arr = [
   { "name" => "Steven", "age" => 22 },
   { "name" => "Vincent", "age" => 6 },
 ]
+result = []
+arr.each do |i|
+  if i["age"].to_i > 18
+    result << i
+  end
+end
+
 
 # ....
 
-puts "所有成年人，并由小到大: _________"
+result.sort_by! { |hsh| hsh["age"]  }
+puts "所有成年人，并由小到大: #{ result}}"
 
 # 答案应该是
 #[
